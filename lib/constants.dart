@@ -15,4 +15,8 @@ const backgroundColor = Colors.black;
 var buttonColor = Colors.red[400];
 const borderColor = Colors.grey;
 
+var firebaseAuth = FirebaseAuth.instance;
+var firebaseStorage = FirebaseStorage.instance;
+var firestore = FirebaseFirestore.instance;
 
+var authController = AuthController.instance;
