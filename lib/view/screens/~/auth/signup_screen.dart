@@ -62,18 +62,77 @@ class SignupScreen extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               margin: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextInputField(controller: _emailController, 
-              labelText: 'Email', icon: Icons.email),
+              child: TextInputField(controller: _usernameController, 
+              labelText: 'Username', icon: Icons.person),
             ),
             
             const SizedBox(
-              height: 30,
+              height: 15,
             ),
 
             Container(
-              width: MediaQuery.of(context).size.width - 40,
-              
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextInputField(
+                controller: _emailController,
+                labelText: 'Email', icon: Icons.email),
+            ),
+            
+            const SizedBox(
+              height: 15,
+            ),
+
+            Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextInputField(controller: _passwordController,
+               labelText: 'Password', icon: Icons.lock
+               ,isObscure: true,
+               ),
+            ),
+
+            const SizedBox(
+              height: 30,
             )
+            
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 50,
+              decoration: BoxDecoration(
+                color: buttonColor,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(5)
+                )
+              ),
+              child: InkWell(
+                onTap: () => authController.registerUser(
+                  _usernameController.text,
+                  _emailController.text,
+                  _passwordController.text,
+                  authController.profilePhoto,  
+                ),
+              child: const Center(
+                child: Text(
+                  'Register',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+
+
+              ),
+              ),
+              
+              const SizedBox(
+                height: 15,
+              ),
+
+
+              
+
+
 
             ],
         ),
