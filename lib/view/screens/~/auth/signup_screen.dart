@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
+import 'package:tiktok_clone/view/screens/~/auth/login_screen.dart';
 import 'package:tiktok_clone/view/widgets/text_input_field.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -129,16 +130,32 @@ class SignupScreen extends StatelessWidget {
                 height: 15,
               ),
 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Already have an account ?',
+                    style: TextStyle(
+                      fontSize: 20
+                    ),
+                  ),
 
-              
-
-
-
+                  InkWell(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => LoginScreen(), 
+                      ),
+                    ),
+                    child: Text(
+                      'Login',
+                      style: TextStyle(fontSize: 20, color: buttonColor),
+                    ),
+                  )
+                ],
+              )
             ],
         ),
       ),
-    )
+    );
   }
-
-
 }

@@ -91,16 +91,37 @@ class CommentScreen extends StatelessWidget {
                   controller: _commentController,
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.white
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700
                   ),
-
+                  decoration: const InputDecoration(
+                    labelText: "Comment"
+                    labelStyle: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.red
+                      ),
+                    ),
+                  ),
                 ),
-              )
+                trailing: TextButton(
+                  onPressed: () =>
+                  commentController.postComment(_commentController.text),
+                  child: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
 
             ],
           ),
         ),
       )
-    )
+    );
   }
 }
