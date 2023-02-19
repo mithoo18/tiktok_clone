@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
+import 'package:tiktok_clone/constants.dart';
 import 'package:tiktok_clone/view/widgets/video_player_iten.dart';
 
 class AddVideoScreen extends StatelessWidget {
+  const AddVideoScreen({Key? key}) : super(key: key);
+
+
   final video = await ImagePicker().pickVideo(source : src);
   if(video != null){
     Navigator.of(context).push(
