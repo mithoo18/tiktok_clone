@@ -26,7 +26,7 @@ class CommentController extends GetxController {
     }));
   }
 
-  postComment() async {
+  postComment(String text) async {
     try {
       if (commentText.isNotEmpty) {
         DocumentSnapshot userDoc = await firestore
