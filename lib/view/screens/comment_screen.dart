@@ -1,8 +1,12 @@
 import 'dart:ui';
-
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
+import 'package:tiktok_clone/controlers/comment_controller.dart';
+import 'package:timeago/timeago.dart' as tago;
+
 
 class CommentScreen extends StatelessWidget {
   final String id;
@@ -10,7 +14,7 @@ class CommentScreen extends StatelessWidget {
   CommentScreen({Key? key, required this.id}) : super(key: key);
 
   final TextEditingController _commentController = TextEditingController();
-  CommentController commentController = Get.put(commentController());
+  CommentController commentController = Get.put(CommentController());
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +99,7 @@ class CommentScreen extends StatelessWidget {
                     fontWeight: FontWeight.w700
                   ),
                   decoration: const InputDecoration(
-                    labelText: "Comment"
+                    labelText: "Comment",
                     labelStyle: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
@@ -108,20 +112,22 @@ class CommentScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                trailing: TextButton(
+                 trailing: TextButton(
                   onPressed: () =>
-                  commentController.postComment(_commentController.text),
-                  child: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
+                      commentController.postComment(_commentController.text),
+                  child: const Text(
+                    'Send',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
-
             ],
           ),
         ),
-      )
+      ),
     );
   }
 }
