@@ -7,7 +7,6 @@ class Video {
   List likes;
   int commentCount;
   int shareCount;
-  String songCount;
   String songName;
   String caption;
   String videoUrl;
@@ -22,7 +21,6 @@ class Video {
     required this.commentCount,
     required this.shareCount,
     required this.songName,
-    required this.songCount,
     required this.caption,
     required this.videoUrl,
     required this.profilePhoto,
@@ -32,6 +30,7 @@ class Video {
   Map<String, dynamic> toJson() => {
         "username": username,
         "uid": uid,
+        "profilePhoto": profilePhoto,
         "id": id,
         "likes": likes,
         "commentCount": commentCount,
@@ -39,7 +38,7 @@ class Video {
         "songName": songName,
         "caption": caption,
         "videoUrl": videoUrl,
-        thumbnail: thumbnail,
+        "thumbnail": thumbnail,
       };
 
   static Video fromSnap(DocumentSnapshot snap) {
