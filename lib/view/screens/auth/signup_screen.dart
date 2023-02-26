@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
-import 'package:tiktok_clone/view/screens/~/auth/login_screen.dart';
+import 'package:tiktok_clone/view/screens/auth/login_screen.dart';
 import 'package:tiktok_clone/view/widgets/text_input_field.dart';
 
 class SignupScreen extends StatelessWidget {
